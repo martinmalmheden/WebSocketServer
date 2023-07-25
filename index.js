@@ -24,9 +24,9 @@ wss.on('connection', function connection(ws) {
     multiplier = message.multiplier;
   });
 
+  ws.on('close', () => {clearInterval(interval)})
 
-  ws.send('something');
-  setInterval(() => useInterval(multiplier), 1000)
+  let interval = setInterval(() => useInterval(multiplier), 1000)
 });
 
 
