@@ -1,20 +1,20 @@
-/*import { WebSocketServer } from 'ws';
+import { WebSocketServer } from 'ws';
 
-const wss = new WebSocketServer({ port: 8080 });*/
+/*const wss = new WebSocketServer({ port: 8080 });*/
 
 
-const Fs = require('fs');
+const fs = require('fs');
 const Https = require('https');
 const WebSocketServer = require('ws').Server;
 const httpsServer = Https.createServer({
-    key: Fs.readFileSync('key.pem'),
-    cert: Fs.readFileSync('cert.pem')
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
   });
 
   const wss = new WebSocketServer({
     server: httpsServer
   });
-  
+
   httpsServer.on('request', (req, res) => {
     res.writeHead(200);
     res.end('hello HTTPS world\n');
