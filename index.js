@@ -14,7 +14,7 @@ wss.on('connection', function connection(ws) {
             const val2 = rand1 + Number(m)-250;
             const data= t/1000+',0,0,' + val1 +',0,0,0,' + val2;
             ws.send(data);
-            //console.log(data)
+            console.log(data)
         }
     };
 
