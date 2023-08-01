@@ -29,7 +29,7 @@ wss.on('connection', function connection(ws) {
     console.log((new Date()).toLocaleDateString() + ' '+ (new Date()).toLocaleTimeString() + ' - Client disconnected')
   });
 
-  let interval = setInterval(() => useInterval(multiplier), 1000)
+  let interval = setInterval(() => useInterval(multiplier), 200)
 });
 
 
