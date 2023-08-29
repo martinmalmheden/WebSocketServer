@@ -28,7 +28,7 @@ wss.on('connection', function connection(ws) {
     if(message.multiplier)  {
         multiplier = message.multiplier;
     }
-    if(message.action) {
+    if(message.message) {
         console.log(message);
     }
   });
