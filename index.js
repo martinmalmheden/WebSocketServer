@@ -24,7 +24,13 @@ wss.on('connection', function connection(ws) {
   ws.on('message', function message(data) {
     //console.log('received: %s', data);
     let message = JSON.parse(data);
-    multiplier = message.multiplier;
+
+    if(message.multiplier)  {
+        multiplier = message.multiplier;
+    }
+    if(message.action) {
+        console.log(message);
+    }
   });
 
   ws.on('close', () => {
